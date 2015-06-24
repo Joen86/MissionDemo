@@ -16,7 +16,7 @@ public class FollowCam : MonoBehaviour {
 		camZ = this.transform.position.z;
 	}
 	
-	void update () {
+	void Update () {
 		if (poi == null)
 			return;
 		Vector3 destination = poi.transform.position;
@@ -26,10 +26,8 @@ public class FollowCam : MonoBehaviour {
 		destination.z = camZ;
 		transform.position = destination;
 		this.camera.orthographicSize = destination.y + 10;
-	}
-
-	void FixedUpdate () {
-		Vector3 destination;
+	
+		//Vector3 destination;
 				if (poi == null) {
 						destination = Vector3.zero;
 				} else { 
@@ -41,7 +39,7 @@ public class FollowCam : MonoBehaviour {
 								}
 						}
 				}
-		this.camera.orthographicSize = destination.y + 10;
+		//this.camera.orthographicSize = destination.y + 10;
 		}
 	
 }
