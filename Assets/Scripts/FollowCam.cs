@@ -16,6 +16,7 @@ public class FollowCam : MonoBehaviour {
 		camZ = this.transform.position.z;
 	}
 	
+<<<<<<< HEAD
 	void FixedUpdate() {
 		Vector3 destination;
 		// If there is no poi, return to P:[0,0,0]
@@ -38,6 +39,12 @@ public class FollowCam : MonoBehaviour {
 		
 		
 		// Limit the X & Y to minimum values
+=======
+	void Update () {
+		if (poi == null)
+			return;
+		Vector3 destination = poi.transform.position;
+>>>>>>> origin/master
 		destination.x = Mathf.Max (minXY.x, destination.x);
 		destination.y = Mathf.Max (minXY.y, destination.y);
 		// Interpolate from the current Camera position toward destination
@@ -48,9 +55,27 @@ public class FollowCam : MonoBehaviour {
 		transform.position = destination;
 		// Set the orthographicSize of the Camera to keep Ground in view
 		this.camera.orthographicSize = destination.y + 10;
+<<<<<<< HEAD
 	}
 	
 	
 
+=======
+	
+		//Vector3 destination;
+				if (poi == null) {
+						destination = Vector3.zero;
+				} else { 
+						destination = poi.transform.position;
+						if (poi.tag == "Projectile") {
+								if (poi.rigidbody.IsSleeping ()) {
+										poi = null;
+										return;
+								}
+						}
+				}
+		//this.camera.orthographicSize = destination.y + 10;
+		}
+>>>>>>> origin/master
 	
 }

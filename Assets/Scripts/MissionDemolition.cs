@@ -79,7 +79,7 @@ public class MissionDemolition : MonoBehaviour {
 		}
 
 	void OnGUI() {
-				Rect buttonRect = new Rect ((Screen.width / 2) - 50, 10, 100, 24);
+				Rect buttonRect = new Rect ((Screen.width/2) -50, 10, 100, 24);
 				switch (showing) {
 				case "Slingshot":
 						if (GUI.Button (buttonRect, "Show Castle")) {
